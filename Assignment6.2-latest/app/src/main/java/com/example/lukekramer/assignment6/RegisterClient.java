@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 /**
  * Created by lukekramer on 26/05/16.
@@ -19,11 +18,7 @@ public class RegisterClient extends AppCompatActivity {
     private EditText emailAddress;
     private EditText income;
 
-    private TextView Textfirstname;
-    private TextView Textlastname;
-    private TextView Textphonenum;
-    private TextView Textemail;
-    private TextView Textincome;
+
 
     private Button previewButton;
 

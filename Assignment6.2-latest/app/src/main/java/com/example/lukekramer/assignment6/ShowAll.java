@@ -1,7 +1,9 @@
 package com.example.lukekramer.assignment6;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -21,8 +23,10 @@ public class ShowAll extends AppCompatActivity {
 
     private Set<Person> personSet;
     private ArrayAdapter adapter;
+    private ArrayAdapter adapter1;
     private ListView listView;
     private String[] names;
+    private String[] id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,18 +48,22 @@ public class ShowAll extends AppCompatActivity {
         if(personSet.size() > 0) {
 
             names = new String[personSet.size()];
+           // id = new String[personSet.size()];
             int i = 0;
 
             while(itPerson.hasNext()) {
-
+               // id[i]= String.valueOf(itPerson.next().getId());
                 names[i] = itPerson.next().getFirstName();
+
                 i++;
             }
 
-            adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, names);
+            adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,names);
+            //adapter1 = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_2,id);
 
             listView = (ListView) findViewById(R.id.listView);
             listView.setAdapter(adapter);
+            //listView.setAdapter(adapter1);
         }
         else{
             Toast.makeText(ShowAll.this, "No Data", Toast.LENGTH_SHORT).show();
@@ -63,4 +71,14 @@ public class ShowAll extends AppCompatActivity {
 
 
     }
+
+    public void returntoHome(View view) {
+
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(i);
+
+    }
 }
+//#3F51B5
+//#303F9F
+//#FF4081

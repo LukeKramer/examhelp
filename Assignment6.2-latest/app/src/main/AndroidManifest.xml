@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="MobileLoans"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -30,6 +30,8 @@
         <service android:name=".services.bank.Impl.ActivateBankConfirmationServiceImpl" />
         <service android:name=".services.username.Impl.ActivateUserNameServiceImpl" />
         <service android:name=".services.password.Impl.ActivateUserPasswordServiceImpl" />
+
+
     </application>
 
 </manifest>

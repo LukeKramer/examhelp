@@ -69,10 +69,12 @@ public class RegisterClientPreview extends AppCompatActivity {
 
         PersonRepositoryImpl personRepository = new PersonRepositoryImpl(getApplicationContext());
 
+        Long income = Long.parseLong(Textincome.getText().toString());
+
         Person person = new Person.Builder()
                 .FirstName(Textfirstname.getText().toString())
                 .Email(Textemail.getText().toString())
-                .Income(5000)
+                .Income(income)
                 .LastName(Textlastname.getText().toString())
                 .PhoneNumber(Textphonenum.getText().toString())
                 .build();
