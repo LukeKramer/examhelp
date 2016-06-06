@@ -7,8 +7,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.lukekramer.assignment6.entity.Person;
-import com.example.lukekramer.assignment6.repository.person.Impl.PersonRepositoryImpl;
 import com.example.lukekramer.assignment6.repository.tables.CreateTables;
+import com.example.lukekramer.assignment6.services.client.ActivateAddClientService;
+import com.example.lukekramer.assignment6.services.client.Impl.ActivateClientServiceImpl;
 
 /**
  * Created by lukekramer on 26/05/16.
@@ -64,10 +65,12 @@ public class RegisterClientPreview extends AppCompatActivity {
     public void btnSubmit(View view) throws InterruptedException {
 
         CreateTables createTables = new CreateTables(this.getApplicationContext());
-
+       //createTables.resetDatabase();
         createTables.createTables();
 
-        PersonRepositoryImpl personRepository = new PersonRepositoryImpl(getApplicationContext());
+       // PersonRepositoryImpl personRepository = new PersonRepositoryImpl(getApplicationContext());
+
+        ActivateAddClientService clientService =  ActivateClientServiceImpl.getInstance();
 
         Long income = Long.parseLong(Textincome.getText().toString());
 
@@ -79,7 +82,8 @@ public class RegisterClientPreview extends AppCompatActivity {
                 .PhoneNumber(Textphonenum.getText().toString())
                 .build();
 
-        personRepository.save(person);
+        clientService.addClient(this.getApplication(), person);
+        //personRepository.save(person);
         
         Intent intent = new Intent(this, ShowAll.class);
 

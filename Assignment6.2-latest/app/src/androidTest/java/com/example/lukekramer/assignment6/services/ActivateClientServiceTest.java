@@ -6,6 +6,8 @@ import com.example.lukekramer.assignment6.entity.Person;
 import com.example.lukekramer.assignment6.repository.person.Impl.PersonRepositoryImpl;
 import com.example.lukekramer.assignment6.repository.person.PersonRepository;
 import com.example.lukekramer.assignment6.repository.tables.CreateTables;
+import com.example.lukekramer.assignment6.services.client.ActivateAddClientService;
+import com.example.lukekramer.assignment6.services.client.Impl.ActivateClientServiceImpl;
 
 import org.junit.Assert;
 
@@ -33,7 +35,7 @@ public class ActivateClientServiceTest extends AndroidTestCase {
 
        PersonRepository personRepository = new PersonRepositoryImpl(this.getContext());
 
-/*
+
         //Add Client
 
         ActivateAddClientService clientService =  ActivateClientServiceImpl.getInstance();
@@ -63,7 +65,7 @@ public class ActivateClientServiceTest extends AndroidTestCase {
 
         Assert.assertNotNull(updateClient);
 
-*/
+
         Thread.sleep(5000);
         //READ (findALL) Clients
         Set<Person> clients = personRepository.findAll();

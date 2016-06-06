@@ -23,10 +23,10 @@ public class ShowAll extends AppCompatActivity {
 
     private Set<Person> personSet;
     private ArrayAdapter adapter;
-    private ArrayAdapter adapter1;
+    //private ArrayAdapter adapter1;
     private ListView listView;
     private String[] names;
-    private String[] id;
+    //private String[] id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
